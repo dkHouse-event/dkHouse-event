@@ -140,10 +140,38 @@
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
+            z-index: 1001;
         }
         
         .close-modal:hover {
             color: #bbb;
+        }
+        
+        /* Navigation entre photos */
+        .nav-modal {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #f1f1f1;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+            user-select: none;
+            z-index: 1001;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-modal:hover {
+            color: #e0a6a6;
+        }
+        
+        .prev-modal {
+            left: 15px;
+        }
+        
+        .next-modal {
+            right: 15px;
         }
         
         /* Responsive */
@@ -158,6 +186,18 @@
             
             .show-more-item {
                 height: 120px;
+            }
+            
+            .nav-modal {
+                font-size: 35px;
+            }
+            
+            .prev-modal {
+                left: 5px;
+            }
+            
+            .next-modal {
+                right: 5px;
             }
         }
     </style>
@@ -190,66 +230,66 @@
                     <div class="gallery-items">
                         <!-- Premières 6 images visibles -->
                         <div class="gallery-item">
-                            <img src="PPS0.jpg" alt="Décoration pps 1" class="zoomable">
+                            <img src="PPS0.jpg" alt="Décoration pps 1" class="zoomable" data-category="pps" data-index="0">
                         </div>
                         <div class="gallery-item">
-                            <img src="PPS1.jpg" alt="Décoration pps 2" class="zoomable">
+                            <img src="PPS1.jpg" alt="Décoration pps 2" class="zoomable" data-category="pps" data-index="1">
                         </div>
                         <div class="gallery-item">
-                            <img src="PPS2.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS2.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="2">
                         </div>
                         <div class="gallery-item">
-                            <img src="PPS3.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS3.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="3">
                         </div>
                         <div class="gallery-item">
-                            <img src="PPS4.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS4.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="4">
                         </div>
                         <div class="gallery-item">
-                            <img src="PPS5.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS5.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="5">
                         </div>
                         
                         <!-- Images cachées par défaut -->
                         <div class="gallery-item hidden">
-                            <img src="PPS6.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS6.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="6">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS7.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS7.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="7">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS8.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS8.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="8">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS9.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS9.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="9">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS10.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS10.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="10">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS11.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS11.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="11">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS12.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS12.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="12">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS13.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS13.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="13">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS14.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS14.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="14">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS15.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS15.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="15">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS16.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS16.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="16">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS17.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS17.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="17">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS18.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS18.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="18">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="PPS19.jpg" alt="Décoration pps" class="zoomable">
+                            <img src="PPS19.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="19">
                         </div>
                         
                         <!-- Conteneur "Voir plus" -->
@@ -267,42 +307,42 @@
                     <div class="gallery-items">
                         <!-- Premières 6 images visibles -->
                         <div class="gallery-item">
-                            <img src="mariage0.jpg" alt="Décoration Mariage 1" class="zoomable">
+                            <img src="mariage0.jpg" alt="Décoration Mariage 1" class="zoomable" data-category="mariages" data-index="0">
                         </div>
                         <div class="gallery-item">
-                            <img src="mariage1.jpg" alt="Décoration Mariage 2" class="zoomable">
+                            <img src="mariage1.jpg" alt="Décoration Mariage 2" class="zoomable" data-category="mariages" data-index="1">
                         </div>
                         <div class="gallery-item">
-                            <img src="mariage2.jpg" alt="Décoration Mariage 3" class="zoomable">
+                            <img src="mariage2.jpg" alt="Décoration Mariage 3" class="zoomable" data-category="mariages" data-index="2">
                         </div>
                         <div class="gallery-item">
-                            <img src="mariage3.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage3.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="3">
                         </div>
                         <div class="gallery-item">
-                            <img src="mariage4.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage4.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="4">
                         </div>
                         <div class="gallery-item">
-                            <img src="mariage5.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage5.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="5">
                         </div>
                         
                         <!-- Images cachées par défaut -->
                         <div class="gallery-item hidden">
-                            <img src="mariage6.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage6.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="6">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="mariage7.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage7.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="7">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="mariage8.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage8.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="8">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="mariage9.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage9.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="9">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="mariage10.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage10.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="10">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="mariage11.jpg" alt="Décoration Mariage 4" class="zoomable">
+                            <img src="mariage11.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="11">
                         </div>
                         
                         <!-- Conteneur "Voir plus" -->
@@ -320,66 +360,66 @@
                     <div class="gallery-items">
                         <!-- Premières 6 images visibles -->
                         <div class="gallery-item">
-                            <img src="anniversaire0.jpg" alt="Décoration Anniversaire 1" class="zoomable">
+                            <img src="anniversaire0.jpg" alt="Décoration Anniversaire 1" class="zoomable" data-category="anniversaires" data-index="0">
                         </div>
                         <div class="gallery-item">
-                            <img src="anniversaire1.jpg" alt="Décoration Anniversaire 2" class="zoomable">
+                            <img src="anniversaire1.jpg" alt="Décoration Anniversaire 2" class="zoomable" data-category="anniversaires" data-index="1">
                         </div>
                         <div class="gallery-item">
-                            <img src="anniversaire2.jpg" alt="Décoration Anniversaire 3" class="zoomable">
+                            <img src="anniversaire2.jpg" alt="Décoration Anniversaire 3" class="zoomable" data-category="anniversaires" data-index="2">
                         </div>
                         <div class="gallery-item">
-                            <img src="anniversaire3.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire3.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="3">
                         </div>
                         <div class="gallery-item">
-                            <img src="anniversaire4.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire4.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="4">
                         </div>
                         <div class="gallery-item">
-                            <img src="anniversaire5.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire5.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="5">
                         </div>
                         
                         <!-- Images cachées par défaut -->
                         <div class="gallery-item hidden">
-                            <img src="anniversaire6.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire6.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="6">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire7.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire7.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="7">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire8.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire8.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="8">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire9.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire9.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="9">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire10.jpg" alt="Décoration Anniversaire 1" class="zoomable">
+                            <img src="anniversaire10.jpg" alt="Décoration Anniversaire 1" class="zoomable" data-category="anniversaires" data-index="10">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire11.jpg" alt="Décoration Anniversaire 2" class="zoomable">
+                            <img src="anniversaire11.jpg" alt="Décoration Anniversaire 2" class="zoomable" data-category="anniversaires" data-index="11">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire12.jpg" alt="Décoration Anniversaire 3" class="zoomable">
+                            <img src="anniversaire12.jpg" alt="Décoration Anniversaire 3" class="zoomable" data-category="anniversaires" data-index="12">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire13.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire13.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="13">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire14.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire14.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="14">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire15.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire15.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="15">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire16.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire16.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="16">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire17.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire17.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="17">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire18.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire18.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="18">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="anniversaire19.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                            <img src="anniversaire19.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="19">
                         </div>
                         
                         <!-- Conteneur "Voir plus" -->
@@ -397,63 +437,63 @@
                     <div class="gallery-items">
                         <!-- Premières 6 images visibles -->
                         <div class="gallery-item">
-                            <img src="accessoires0.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="accessoires0.jpg" alt="Confection Dragées 1" class="zoomable" data-category="accessoires" data-index="0">
                         </div>
                         <div class="gallery-item">
-                            <img src="accessoires1.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="accessoires1.jpg" alt="Confection Dragées 2" class="zoomable" data-category="accessoires" data-index="1">
                         </div>
                         <div class="gallery-item">
-                            <img src="accessoires2.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="accessoires2.jpg" alt="Confection Dragées 3" class="zoomable" data-category="accessoires" data-index="2">
                         </div>
                         <div class="gallery-item">
-                            <img src="accessoires3.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="accessoires3.jpg" alt="Confection Dragées 4" class="zoomable" data-category="accessoires" data-index="3">
                         </div>
                         <div class="gallery-item">
-                            <img src="accessoires4.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="accessoires4.jpg" alt="Confection Dragées 1" class="zoomable" data-category="accessoires" data-index="4">
                         </div>
                         <div class="gallery-item">
-                            <img src="accessoires5.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="accessoires5.jpg" alt="Confection Dragées 2" class="zoomable" data-category="accessoires" data-index="5">
                         </div>
                         
                         <!-- Images cachées par défaut -->
                         <div class="gallery-item hidden">
-                            <img src="accessoires6.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="accessoires6.jpg" alt="Confection Dragées 3" class="zoomable" data-category="accessoires" data-index="6">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accessoires7.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="accessoires7.jpg" alt="Confection Dragées 4" class="zoomable" data-category="accessoires" data-index="7">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accessoires8.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="accessoires8.jpg" alt="Confection Dragées 4" class="zoomable" data-category="accessoires" data-index="8">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires9.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="accéssoires9.jpg" alt="Confection Dragées 2" class="zoomable" data-category="accessoires" data-index="9">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires10.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="accéssoires10.jpg" alt="Confection Dragées 3" class="zoomable" data-category="accessoires" data-index="10">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires11.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="accéssoires11.jpg" alt="Confection Dragées 4" class="zoomable" data-category="accessoires" data-index="11">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires12.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="accéssoires12.jpg" alt="Confection Dragées 2" class="zoomable" data-category="accessoires" data-index="12">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires13.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="accéssoires13.jpg" alt="Confection Dragées 3" class="zoomable" data-category="accessoires" data-index="13">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires14.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="accéssoires14.jpg" alt="Confection Dragées 4" class="zoomable" data-category="accessoires" data-index="14">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires15.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="accéssoires15.jpg" alt="Confection Dragées 4" class="zoomable" data-category="accessoires" data-index="15">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires16.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="accéssoires16.jpg" alt="Confection Dragées 2" class="zoomable" data-category="accessoires" data-index="16">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires17.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="accéssoires17.jpg" alt="Confection Dragées 3" class="zoomable" data-category="accessoires" data-index="17">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="accéssoires18.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="accéssoires18.jpg" alt="Confection Dragées 4" class="zoomable" data-category="accessoires" data-index="18">
                         </div>
                         
                         <!-- Conteneur "Voir plus" -->
@@ -471,54 +511,54 @@
                     <div class="gallery-items">
                         <!-- Premières 6 images visibles -->
                         <div class="gallery-item">
-                            <img src="dragees0.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="dragees0.jpg" alt="Confection Dragées 1" class="zoomable" data-category="dragees" data-index="0">
                         </div>
                         <div class="gallery-item">
-                            <img src="dragees1.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="dragees1.jpg" alt="Confection Dragées 2" class="zoomable" data-category="dragees" data-index="1">
                         </div>
                         <div class="gallery-item">
-                            <img src="dragees2.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="dragees2.jpg" alt="Confection Dragées 3" class="zoomable" data-category="dragees" data-index="2">
                         </div>
                         <div class="gallery-item">
-                            <img src="dragees3.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="dragees3.jpg" alt="Confection Dragées 4" class="zoomable" data-category="dragees" data-index="3">
                         </div>
                         <div class="gallery-item">
-                            <img src="dragees4.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="dragees4.jpg" alt="Confection Dragées 1" class="zoomable" data-category="dragees" data-index="4">
                         </div>
                         <div class="gallery-item">
-                            <img src="dragees5.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="dragees5.jpg" alt="Confection Dragées 2" class="zoomable" data-category="dragees" data-index="5">
                         </div>
                         
                         <!-- Images cachées par défaut -->
                         <div class="gallery-item hidden">
-                            <img src="dragees6.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="dragees6.jpg" alt="Confection Dragées 3" class="zoomable" data-category="dragees" data-index="6">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragees7.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="dragees7.jpg" alt="Confection Dragées 4" class="zoomable" data-category="dragees" data-index="7">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragees8.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="dragees8.jpg" alt="Confection Dragées 1" class="zoomable" data-category="dragees" data-index="8">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragees9.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="dragees9.jpg" alt="Confection Dragées 2" class="zoomable" data-category="dragees" data-index="9">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragees10.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="dragees10.jpg" alt="Confection Dragées 3" class="zoomable" data-category="dragees" data-index="10">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragees11.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="dragees11.jpg" alt="Confection Dragées 4" class="zoomable" data-category="dragees" data-index="11">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragees12.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="dragees12.jpg" alt="Confection Dragées 1" class="zoomable" data-category="dragees" data-index="12">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragees13.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="dragees13.jpg" alt="Confection Dragées 2" class="zoomable" data-category="dragees" data-index="13">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragées14.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="dragées14.jpg" alt="Confection Dragées 1" class="zoomable" data-category="dragees" data-index="14">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="dragées15.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="dragées15.jpg" alt="Confection Dragées 2" class="zoomable" data-category="dragees" data-index="15">
                         </div>
                         
                         <!-- Conteneur "Voir plus" -->
@@ -536,51 +576,51 @@
                     <div class="gallery-items">
                         <!-- Premières 6 images visibles -->
                         <div class="gallery-item">
-                            <img src="infographie0.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="infographie0.jpg" alt="Confection Dragées 1" class="zoomable" data-category="infographie" data-index="0">
                         </div>
                         <div class="gallery-item">
-                            <img src="info1.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="info1.jpg" alt="Confection Dragées 2" class="zoomable" data-category="infographie" data-index="1">
                         </div>
                         <div class="gallery-item">
-                            <img src="info2.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="info2.jpg" alt="Confection Dragées 3" class="zoomable" data-category="infographie" data-index="2">
                         </div>
                         <div class="gallery-item">
-                            <img src="info3.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="info3.jpg" alt="Confection Dragées 4" class="zoomable" data-category="infographie" data-index="3">
                         </div>
                         <div class="gallery-item">
-                            <img src="info4.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="info4.jpg" alt="Confection Dragées 1" class="zoomable" data-category="infographie" data-index="4">
                         </div>
                         <div class="gallery-item">
-                            <img src="info5.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="info5.jpg" alt="Confection Dragées 2" class="zoomable" data-category="infographie" data-index="5">
                         </div>
                         
                         <!-- Images cachées par défaut -->
                         <div class="gallery-item hidden">
-                            <img src="info6.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="info6.jpg" alt="Confection Dragées 3" class="zoomable" data-category="infographie" data-index="6">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="info7.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="info7.jpg" alt="Confection Dragées 4" class="zoomable" data-category="infographie" data-index="7">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="info8.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="info8.jpg" alt="Confection Dragées 4" class="zoomable" data-category="infographie" data-index="8">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="info9.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="info9.jpg" alt="Confection Dragées 4" class="zoomable" data-category="infographie" data-index="9">
                         </div>
                          <div class="gallery-item hidden">
-                            <img src="info10.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="info10.jpg" alt="Confection Dragées 1" class="zoomable" data-category="infographie" data-index="10">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="info11.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="info11.jpg" alt="Confection Dragées 2" class="zoomable" data-category="infographie" data-index="11">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="info12.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="info12.jpg" alt="Confection Dragées 3" class="zoomable" data-category="infographie" data-index="12">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="info13.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="info13.jpg" alt="Confection Dragées 4" class="zoomable" data-category="infographie" data-index="13">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="info14.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="info14.jpg" alt="Confection Dragées 4" class="zoomable" data-category="infographie" data-index="14">
                         </div>
                         
                         <!-- Conteneur "Voir plus" -->
@@ -598,184 +638,41 @@
                     <div class="gallery-items">
                         <!-- Premières 6 images visibles -->
                         <div class="gallery-item">
-                            <img src="baby0.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="baby0.jpg" alt="Confection Dragées 1" class="zoomable" data-category="baby-shower" data-index="0">
                         </div>
                         <div class="gallery-item">
-                            <img src="baby1.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="baby1.jpg" alt="Confection Dragées 2" class="zoomable" data-category="baby-shower" data-index="1">
                         </div>
                         <div class="gallery-item">
-                            <img src="baby2.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="baby2.jpg" alt="Confection Dragées 3" class="zoomable" data-category="baby-shower" data-index="2">
                         </div>
                         <div class="gallery-item">
-                            <img src="baby3.jpg" alt="Confection Dragées 1" class="zoomable">
+                            <img src="baby3.jpg" alt="Confection Dragées 1" class="zoomable" data-category="baby-shower" data-index="3">
                         </div>
                         <div class="gallery-item">
-                            <img src="baby4.jpg" alt="Confection Dragées 2" class="zoomable">
+                            <img src="baby4.jpg" alt="Confection Dragées 2" class="zoomable" data-category="baby-shower" data-index="4">
                         </div>
                         <div class="gallery-item">
-                            <img src="baby5.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="baby5.jpg" alt="Confection Dragées 3" class="zoomable" data-category="baby-shower" data-index="5">
                         </div>
                         
                         <!-- Images cachées par défaut -->
                         <div class="gallery-item hidden">
-                            <img src="baby6.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="baby6.jpg" alt="Confection Dragées 4" class="zoomable" data-category="baby-shower" data-index="6">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="baby7.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="baby7.jpg" alt="Confection Dragées 4" class="zoomable" data-category="baby-shower" data-index="7">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="baby8.jpg" alt="Confection Dragées 3" class="zoomable">
+                            <img src="baby8.jpg" alt="Confection Dragées 3" class="zoomable" data-category="baby-shower" data-index="8">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="baby9.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="baby9.jpg" alt="Confection Dragées 4" class="zoomable" data-category="baby-shower" data-index="9">
                         </div>
                         <div class="gallery-item hidden">
-                            <img src="baby10.jpg" alt="Confection Dragées 4" class="zoomable">
+                            <img src="baby10.jpg" alt="Confection Dragées 4" class="zoomable" data-category="baby-shower" data-index="10">
                         </div>
                         
                         <!-- Conteneur "Voir plus" -->
                         <div class="show-more-container">
-                            <div class="show-more-item" data-category="baby-shower">
-                                <span class="show-more-text">Voir plus <span class="show-more-count">(5 images)</span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Arrosage -->
-                <div class="gallery-category">
-                    <h3>--Arrosage--</h3>
-                    <div class="gallery-items">
-                        <!-- Premières 6 images visibles -->
-                        <div class="gallery-item">
-                            <img src="arro0.jpg" alt="Confection Dragées 1" class="zoomable">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="arro1.jpg" alt="Confection Dragées 2" class="zoomable">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="arro2.jpg" alt="Confection Dragées 3" class="zoomable">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="arro3.jpg" alt="Confection Dragées 4" class="zoomable">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="arro4.jpg" alt="Confection Dragées 1" class="zoomable">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="arro5.jpg" alt="Confection Dragées 2" class="zoomable">
-                        </div>
-                        
-                        <!-- Images cachées par défaut -->
-                        <div class="gallery-item hidden">
-                            <img src="arro6.jpg" alt="Confection Dragées 3" class="zoomable">
-                        </div>
-                        <div class="gallery-item hidden">
-                            <img src="arro7.jpg" alt="Confection Dragées 4" class="zoomable">
-                        </div>
-                        <div class="gallery-item hidden">
-                            <img src="arro8.jpg" alt="Confection Dragées 1" class="zoomable">
-                        </div>
-                        <div class="gallery-item hidden">
-                            <img src="arro9.jpg" alt="Confection Dragées 2" class="zoomable">
-                        </div>
-                        <div class="gallery-item hidden">
-                            <img src="arro10.jpg" alt="Confection Dragées 3" class="zoomable">
-                        </div>
-                        
-                        <!-- Conteneur "Voir plus" -->
-                        <div class="show-more-container">
-                            <div class="show-more-item" data-category="arrosage">
-                                <span class="show-more-text">Voir plus <span class="show-more-count">(5 images)</span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Design by young dev ft - Tous droits réservés</p>
-    </footer>
-
-    <div id="image-modal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modal-image">
-    </div>
-
-    <script>
-        // Fonctionnalité "Voir plus"
-        document.querySelectorAll('.show-more-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const category = this.getAttribute('data-category');
-                const galleryItems = this.closest('.gallery-items').querySelectorAll('.gallery-item.hidden');
-                
-                // Afficher toutes les images cachées
-                galleryItems.forEach(item => {
-                    item.classList.remove('hidden');
-                });
-                
-                // Masquer le conteneur "Voir plus"
-                this.closest('.show-more-container').style.display = 'none';
-            });
-        });
-        
-        // Calculer et afficher le nombre d'images restantes
-        document.querySelectorAll('.gallery-category').forEach(category => {
-            const showMoreContainer = category.querySelector('.show-more-container');
-            if (showMoreContainer) {
-                const hiddenItems = category.querySelectorAll('.gallery-item.hidden');
-                const countElement = showMoreContainer.querySelector('.show-more-count');
-                
-                if (hiddenItems.length > 0) {
-                    countElement.textContent = `(${hiddenItems.length} images)`;
-                } else {
-                    showMoreContainer.style.display = 'none';
-                }
-            }
-        });
-
-        // Effet de zoom sur les images
-        const zoomableImages = document.querySelectorAll('.zoomable');
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('modal-image');
-        const closeModal = document.querySelector('.close-modal');
-
-        zoomableImages.forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-            });
-        });
-
-        closeModal.addEventListener('click', function() {
-            modal.style.display = "none";
-        });
-
-        window.addEventListener('click', function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        });
-
-        // Menu mobile
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-        });
-        
-        // Fermer le menu quand un lien est cliqué
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    nav.classList.remove('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                            <div class="show-m
