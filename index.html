@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK'a House Events</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style spécifique pour le bouton Réserver */
+        .btn-reserver {
+            background-color: #ff1744 !important;
+            color: white !important;
+            border: none !important;
+            padding: 0.7rem 1.8rem !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            font-size: 1rem !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 6px 20px rgba(255, 23, 68, 0.5) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+        }
+
+        .btn-reserver:hover {
+            background-color: #d50000 !important;
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 30px rgba(213, 0, 0, 0.6) !important;
+        }
+
+        .btn-reserver:active {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 5px 15px rgba(255, 23, 68, 0.5) !important;
+        }
+
+        /* Boutons de navigation en bas de l'accueil */
+        .bottom-nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .bottom-nav-buttons .btn-reserver {
+            padding: 1rem 3rem !important;
+            font-size: 1.2rem !important;
+        }
+
+        /* Responsive pour les boutons du bas */
+        @media (max-width: 768px) {
+            .bottom-nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .bottom-nav-buttons .btn-reserver {
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Dk-house events">
+        </div>
+        <h1 class="company-name">DK'a House Events</h1>
+        <button class="menu-toggle" aria-label="Menu">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                <li><a href="#galerie" class="nav-link">Galerie</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><button class="btn-reserver" onclick="openReservationModal()">Réserver</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section Accueil -->
+        <section id="accueil" class="page-section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Transformez vos événements en moments magiques</h2>
+                    <p>Spécialistes en décoration événementielle, nous donnons vie à vos rêves avec élégance et créativité.</p>
+                    <a href="#contact" class="btn nav-link">Contactez-Nous</a>
+                    <a href="#galerie" class="btn nav-link">Visitez galerie</a>
+                    <button class="btn" onclick="openReservationModal()">Réserver</button>
+                </div>
+            </div>
+
+            <div class="about">
+                <h2>Notre Agence</h2>
+                <p>Chez DK'a House Events, nous créons des décorations uniques pour vos moments les plus précieux. Notre équipe de décorateurs passionnés transforme chaque espace en une expérience visuelle mémorable, parfaitement adaptée à votre personnalité et vos souhaits.</p>
+                <p>Depuis plus de 05 ans, nous mettons notre expertise au service de vos événements pour créer des atmosphères qui émerveilleront vos invités.</p>
+            </div>
+
+            <div class="services">
+                <h2>Nos Services</h2>
+                <div class="service-container">
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="mariage0.jpg" alt="Décoration Mariage" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Décoration Mariage/PPS</h3>
+                            <p>Des arrangements floraux aux centres de table, nous créons un cadre romantique et élégant pour le plus beau jour de votre vie. Personnalisation complète selon votre thème et vos couleurs.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="anniversaire0.jpg" alt="Décoration Anniversaire" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Décoration Anniversaire</h3>
+                            <p>Des concepts créatifs et personnalisés pour célébrer tous les âges. Ballons, bannières, thèmes spéciaux – nous nous occupons de tout pour créer une ambiance festive inoubliable.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="bapteme0.jpg" alt="Décoration Baptême" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Décoration Baptême/Première Communion</h3>
+                            <p>Des décorations douces et élégantes pour célébrer ce moment spirituel important. Nous créons une atmosphère sereine et joyeuse adaptée à cette célébration familiale.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="voiture.jpg" alt="Décoration Voiture" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Décoration Voiture</h3>
+                            <p>Des arrangements floraux élégants et des ornements harmonieux pour décorer le véhicule des mariés ou pour toute occasion spéciale nécessitant un transport décoré avec style.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="dragees0.jpg" alt="Confection de Dragées" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Confection de Dragées(importés/traditionnels)</h3>
+                            <p>Des contenants élégants et personnalisés pour vos dragées. Nous proposons une large gamme de boîtes, pochettes et contenants originaux, adaptés à votre événement.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="confirmation0.jpg" alt="Décoration Confirmation" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Decoration de Confirmation</h3>
+                            <p>Des contenants élégants et personnalisés pour vos dragées. Nous proposons une large gamme de boîtes, pochettes et contenants originaux, adaptés à votre événement.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="accessoires0.jpg" alt="Confection accessoires" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Confection d'accesoires</h3>
+                            <p>Des contenants élégants et personnalisés pour vos dragées. Nous proposons une large gamme de boîtes, pochettes et contenants originaux, adaptés à votre événement.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="infographie0.jpg" alt="Infographie" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Infographie événementiel</h3>
+                            <p>Confections de: cartes d'invitations(Physique/Numérique), cartes de menus, numéro de table, etiquettes de boissons, piste de danse personnalisée et panneau de bienvenue</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="baby0.jpg" alt="Baby Shower" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>Baby Shower</h3>
+                            <p>Nous créons une ambiance douce et festive pour célébrer l'arrivée de votre bébé. Ballons, couleurs, thèmes personnalisés et mise en place complète pour rendre ce moment unique et inoubliable.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-image">
+                            <img src="arro0.jpg" alt="Arrosage" class="zoomable">
+                        </div>
+                        <div class="service-description">
+                            <h3>--Arrosage--</h3>
+                            <p>Nous vous aidons à célébrer la réussite et la fin des examens avec une décoration festive et personnalisée. Ballons, couleurs vives, thèmes adaptés et mise en place complète pour créer une ambiance de joie et de réussite.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons de navigation en bas de l'accueil -->
+            <div class="bottom-nav-buttons">
+                <button class="btn-reserver" onclick="document.querySelector('a[href=\'#galerie\']').click()">Galerie</button>
+                <button class="btn-reserver" onclick="openReservationModal()">Réserver</button>
+            </div>
+        </section>
+
+        <!-- Section Galerie -->
+        <section id="galerie" class="page-section gallery-section">
+            <h2>Nos Quelques Réalisations</h2>
+            <p>Découvrez notre portfolio de décorations événementielles. Chaque image représente un projet unique créé avec passion.</p>
+            
+            <div class="gallery-grid">
+                <!-- PPS -->
+                <div class="gallery-category">
+                    <h3>--PPS--</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item"><img src="PPS0.jpg" alt="Décoration pps 1" class="zoomable" data-category="pps" data-index="0"></div>
+                        <div class="gallery-item"><img src="PPS1.jpg" alt="Décoration pps 2" class="zoomable" data-category="pps" data-index="1"></div>
+                        <div class="gallery-item"><img src="PPS2.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="2"></div>
+                        <div class="gallery-item"><img src="PPS3.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="3"></div>
+                        <div class="gallery-item"><img src="PPS4.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="4"></div>
+                        <div class="gallery-item"><img src="PPS5.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="5"></div>
+                        <div class="gallery-item hidden"><img src="PPS6.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="6"></div>
+                        <div class="gallery-item hidden"><img src="PPS7.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="7"></div>
+                        <div class="gallery-item hidden"><img src="PPS8.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="8"></div>
+                        <div class="gallery-item hidden"><img src="PPS9.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="9"></div>
+                        <div class="gallery-item hidden"><img src="PPS10.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="10"></div>
+                        <div class="gallery-item hidden"><img src="PPS11.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="11"></div>
+                        <div class="gallery-item hidden"><img src="PPS12.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="12"></div>
+                        <div class="gallery-item hidden"><img src="PPS13.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="13"></div>
+                        <div class="gallery-item hidden"><img src="PPS14.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="14"></div>
+                        <div class="gallery-item hidden"><img src="PPS15.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="15"></div>
+                        <div class="gallery-item hidden"><img src="PPS16.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="16"></div>
+                        <div class="gallery-item hidden"><img src="PPS17.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="17"></div>
+                        <div class="gallery-item hidden"><img src="PPS18.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="18"></div>
+                        <div class="gallery-item hidden"><img src="PPS19.jpg" alt="Décoration pps" class="zoomable" data-category="pps" data-index="19"></div>
+                        <div class="show-more-container">
+                            <div class="show-more-item" data-category="pps">
+                                <span class="show-more-text">Voir plus <span class="show-more-count">(14 images)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mariages -->
+                <div class="gallery-category">
+                    <h3>Mariages</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item"><img src="mariage0.jpg" alt="Décoration Mariage 1" class="zoomable" data-category="mariages" data-index="0"></div>
+                        <div class="gallery-item"><img src="mariage1.jpg" alt="Décoration Mariage 2" class="zoomable" data-category="mariages" data-index="1"></div>
+                        <div class="gallery-item"><img src="mariage2.jpg" alt="Décoration Mariage 3" class="zoomable" data-category="mariages" data-index="2"></div>
+                        <div class="gallery-item"><img src="mariage3.jpg" alt="Décoration Mariage 4" class="zoomable" data-category="mariages" data-index="3"></div>
+                        <div class="gallery-item"><img src="mariage4.jpg" alt="Décoration Mariage 5" class="zoomable" data-category="mariages" data-index="4"></div>
+                        <div class="gallery-item"><img src="mariage5.jpg" alt="Décoration Mariage 6" class="zoomable" data-category="mariages" data-index="5"></div>
+                        <div class="gallery-item hidden"><img src="mariage6.jpg" alt="Décoration Mariage 7" class="zoomable" data-category="mariages" data-index="6"></div>
+                        <div class="gallery-item hidden"><img src="mariage7.jpg" alt="Décoration Mariage 8" class="zoomable" data-category="mariages" data-index="7"></div>
+                        <div class="gallery-item hidden"><img src="mariage8.jpg" alt="Décoration Mariage 9" class="zoomable" data-category="mariages" data-index="8"></div>
+                        <div class="gallery-item hidden"><img src="mariage9.jpg" alt="Décoration Mariage 10" class="zoomable" data-category="mariages" data-index="9"></div>
+                        <div class="gallery-item hidden"><img src="mariage10.jpg" alt="Décoration Mariage 11" class="zoomable" data-category="mariages" data-index="10"></div>
+                        <div class="gallery-item hidden"><img src="mariage11.jpg" alt="Décoration Mariage 12" class="zoomable" data-category="mariages" data-index="11"></div>
+                        <div class="show-more-container">
+                            <div class="show-more-item" data-category="mariages">
+                                <span class="show-more-text">Voir plus <span class="show-more-count">(6 images)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Anniversaires -->
+                <div class="gallery-category">
+                    <h3>Anniversaires</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item"><img src="anniversaire0.jpg" alt="Décoration Anniversaire 1" class="zoomable" data-category="anniversaires" data-index="0"></div>
+                        <div class="gallery-item"><img src="anniversaire1.jpg" alt="Décoration Anniversaire 2" class="zoomable" data-category="anniversaires" data-index="1"></div>
+                        <div class="gallery-item"><img src="anniversaire2.jpg" alt="Décoration Anniversaire 3" class="zoomable" data-category="anniversaires" data-index="2"></div>
+                        <div class="gallery-item"><img src="anniversaire3.jpg" alt="Décoration Anniversaire 4" class="zoomable" data-category="anniversaires" data-index="3"></div>
+                        <div class="gallery-item"><img src="anniversaire4.jpg" alt="Décoration Anniversaire 5" class="zoomable" data-category="anniversaires" data-index="4"></div>
+                        <div class="gallery-item"><img src="anniversaire5.jpg" alt="Décoration Anniversaire 6" class="zoomable" data-category="anniversaires" data-index="5"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire6.jpg" alt="Décoration Anniversaire 7" class="zoomable" data-category="anniversaires" data-index="6"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire7.jpg" alt="Décoration Anniversaire 8" class="zoomable" data-category="anniversaires" data-index="7"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire8.jpg" alt="Décoration Anniversaire 9" class="zoomable" data-category="anniversaires" data-index="8"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire9.jpg" alt="Décoration Anniversaire 10" class="zoomable" data-category="anniversaires" data-index="9"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire10.jpg" alt="Décoration Anniversaire 11" class="zoomable" data-category="anniversaires" data-index="10"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire11.jpg" alt="Décoration Anniversaire 12" class="zoomable" data-category="anniversaires" data-index="11"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire12.jpg" alt="Décoration Anniversaire 13" class="zoomable" data-category="anniversaires" data-index="12"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire13.jpg" alt="Décoration Anniversaire 14" class="zoomable" data-category="anniversaires" data-index="13"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire14.jpg" alt="Décoration Anniversaire 15" class="zoomable" data-category="anniversaires" data-index="14"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire15.jpg" alt="Décoration Anniversaire 16" class="zoomable" data-category="anniversaires" data-index="15"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire16.jpg" alt="Décoration Anniversaire 17" class="zoomable" data-category="anniversaires" data-index="16"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire17.jpg" alt="Décoration Anniversaire 18" class="zoomable" data-category="anniversaires" data-index="17"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire18.jpg" alt="Décoration Anniversaire 19" class="zoomable" data-category="anniversaires" data-index="18"></div>
+                        <div class="gallery-item hidden"><img src="anniversaire19.jpg" alt="Décoration Anniversaire 20" class="zoomable" data-category="anniversaires" data-index="19"></div>
+                        <div class="show-more-container">
+                            <div class="show-more-item" data-category="anniversaires">
+                                <span class="show-more-text">Voir plus <span class="show-more-count">(14 images)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accessoires -->
+                <div class="gallery-category">
+                    <h3>Accéssoires</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item"><img src="accessoires0.jpg" alt="Accessoires 1" class="zoomable" data-category="accessoires" data-index="0"></div>
+                        <div class="gallery-item"><img src="accessoires1.jpg" alt="Accessoires 2" class="zoomable" data-category="accessoires" data-index="1"></div>
+                        <div class="gallery-item"><img src="accessoires2.jpg" alt="Accessoires 3" class="zoomable" data-category="accessoires" data-index="2"></div>
+                        <div class="gallery-item"><img src="accessoires3.jpg" alt="Accessoires 4" class="zoomable" data-category="accessoires" data-index="3"></div>
+                        <div class="gallery-item"><img src="accessoires4.jpg" alt="Accessoires 5" class="zoomable" data-category="accessoires" data-index="4"></div>
+                        <div class="gallery-item"><img src="accessoires5.jpg" alt="Accessoires 6" class="zoomable" data-category="accessoires" data-index="5"></div>
+                        <div class="gallery-item hidden"><img src="accessoires6.jpg" alt="Accessoires 7" class="zoomable" data-category="accessoires" data-index="6"></div>
+                        <div class="gallery-item hidden"><img src="accessoires7.jpg" alt="Accessoires 8" class="zoomable" data-category="accessoires" data-index="7"></div>
+                        <div class="gallery-item hidden"><img src="accessoires8.jpg" alt="Accessoires 9" class="zoomable" data-category="accessoires" data-index="8"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires9.jpg" alt="Accessoires 10" class="zoomable" data-category="accessoires" data-index="9"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires10.jpg" alt="Accessoires 11" class="zoomable" data-category="accessoires" data-index="10"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires11.jpg" alt="Accessoires 12" class="zoomable" data-category="accessoires" data-index="11"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires12.jpg" alt="Accessoires 13" class="zoomable" data-category="accessoires" data-index="12"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires13.jpg" alt="Accessoires 14" class="zoomable" data-category="accessoires" data-index="13"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires14.jpg" alt="Accessoires 15" class="zoomable" data-category="accessoires" data-index="14"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires15.jpg" alt="Accessoires 16" class="zoomable" data-category="accessoires" data-index="15"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires16.jpg" alt="Accessoires 17" class="zoomable" data-category="accessoires" data-index="16"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires17.jpg" alt="Accessoires 18" class="zoomable" data-category="accessoires" data-index="17"></div>
+                        <div class="gallery-item hidden"><img src="accéssoires18.jpg" alt="Accessoires 19" class="zoomable" data-category="accessoires" data-index="18"></div>
+                        <div class="show-more-container">
+                            <div class="show-more-item" data-category="accessoires">
+                                <span class="show-more-text">Voir plus <span class="show-more-count">(13 images)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dragées -->
+                <div class="gallery-category">
+                    <h3>--Dragées--</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item"><img src="dragees0.jpg" alt="Dragées 1" class="zoomable" data-category="dragees" data-index="0"></div>
+                        <div class="gallery-item"><img src="dragees1.jpg" alt="Dragées 2" class="zoomable" data-category="dragees" data-index="1"></div>
+                        <div class="gallery-item"><img src="dragees2.jpg" alt="Dragées 3" class="zoomable" data-category="dragees" data-index="2"></div>
+                        <div class="gallery-item"><img src="dragees3.jpg" alt="Dragées 4" class="zoomable" data-category="dragees" data-index="3"></div>
+                        <div class="gallery-item"><img src="dragees4.jpg" alt="Dragées 5" class="zoomable" data-category="dragees" data-index="4"></div>
+                        <div class="gallery-item"><img src="dragees5.jpg" alt="Dragées 6" class="zoomable" data-category="dragees" data-index="5"></div>
+                        <div class="gallery-item hidden"><img src="dragees6.jpg" alt="Dragées 7" class="zoomable" data-category="dragees" data-index="6"></div>
+                        <div class="gallery-item hidden"><img src="dragees7.jpg" alt="Dragées 8" class="zoomable" data-category="dragees" data-index="7"></div>
+                        <div class="gallery-item hidden"><img src="dragees8.jpg" alt="Dragées 9" class="zoomable" data-category="dragees" data-index="8"></div>
+                        <div class="gallery-item hidden"><img src="dragees9.jpg" alt="Dragées 10" class="zoomable" data-category="dragees" data-index="9"></div>
+                        <div class="gallery-item hidden"><img src="dragees10.jpg" alt="Dragées 11" class="zoomable" data-category="dragees" data-index="10"></div>
+                        <div class="gallery-item hidden"><img src="dragees11.jpg" alt="Dragées 12" class="zoomable" data-category="dragees" data-index="11"></div>
+                        <div class="gallery-item hidden"><img src="dragees12.jpg" alt="Dragées 13" class="zoomable" data-category="dragees" data-index="12"></div>
+                        <div class="gallery-item hidden"><img src="dragees13.jpg" alt="Dragées 14" class="zoomable" data-category="dragees" data-index="13"></div>
+                        <div class="gallery-item hidden"><img src="dragées14.jpg" alt="Dragées 15" class="zoomable" data-category="dragees" data-index="14"></div>
+                        <div class="gallery-item hidden"><img src="dragées15.jpg" alt="Dragées 16" class="zoomable" data-category="dragees" data-index="15"></div>
+                        <div class="show-more-container">
+                            <div class="show-more-item" data-category="dragees">
+                                <span class="show-more-text">Voir plus <span class="show-more-count">(10 images)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographie -->
+                <div class="gallery-category">
+                    <h3>Infographie</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item"><img src="infographie0.jpg" alt="Infographie 1" class="zoomable" data-category="infographie" data-index="0"></div>
+                        <div class="gallery-item"><img src="info1.jpg" alt="Infographie 2" class="zoomable" data-category="infographie" data-index="1"></div>
+                        <div class="gallery-item"><img src="info2.jpg" alt="Infographie 3" class="zoomable" data-category="infographie" data-index="2"></div>
+                        <div class="gallery-item"><img src="info3.jpg" alt="Infographie 4" class="zoomable" data-category="infographie" data-index="3"></div>
+                        <div class="gallery-item"><img src="info4.jpg" alt="Infographie 5" class="zoomable" data-category="infographie" data-index="4"></div>
+                        <div class="gallery-item"><img src="info5.jpg" alt="Infographie 6" class="zoomable" data-category="infographie" data-index="5"></div>
+                        <div class="gallery-item hidden"><img src="info6.jpg" alt="Infographie 7" class="zoomable" data-category="infographie" data-index="6"></div>
+                        <div class="gallery-item hidden"><img src="info7.jpg" alt="Infographie 8" class="zoomable" data-category="infographie" data-index="7"></div>
+                        <div class="gallery-item hidden"><img src="info8.jpg" alt="Infographie 9" class="zoomable" data-category="infographie" data-index="8"></div>
+                        <div class="gallery-item hidden"><img src="info9.jpg" alt="Infographie 10" class="zoomable" data-category="infographie" data-index="9"></div>
+                        <div class="gallery-item hidden"><img src="info10.jpg" alt="Infographie 11" class="zoomable" data-category="infographie" data-index="10"></div>
+                        <div class="gallery-item hidden"><img src="info11.jpg" alt="Infographie 12" class="zoomable" data-category="infographie" data-index="11"></div>
+                        <div class="gallery-item hidden"><img src="info12.jpg" alt="Infographie 13" class="zoomable" data-category="infographie" data-index="12"></div>
+                        <div class="gallery-item hidden"><img src="info13.jpg" alt="Infographie 14" class="zoomable" data-category="infographie" data-index="13"></div>
+                        <div class="gallery-item hidden"><img src="info14.jpg" alt="Infographie 15" class="zoomable" data-category="infographie" data-index="14"></div>
+                        <div class="show-more-container">
+                            <div class="show-more-item" data-category="infographie">
+                                <span class="show-more-text">Voir plus <span class="show-more-count">(9 images)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Baby Shower -->
+                <div class="gallery-category">
+                    <h3>Baby Shower</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item"><img src="baby0.jpg" alt="Baby Shower 1" class="zoomable" data-category="baby-shower" data-index="0"></div>
+                        <div class="gallery-item"><img src="baby1.jpg" alt="Baby Shower 2" class="zoomable" data-category="baby-shower" data-index="1"></div>
+                        <div class="gallery-item"><img src="baby2.jpg" alt="Baby Shower 3" class="zoomable" data-category="baby-shower" data-index="2"></div>
+                        <div class="gallery-item"><img src="baby3.jpg" alt="Baby Shower 4" class="zoomable" data-category="baby-shower" data-index="3"></div>
+                        <div class="gallery-item"><img src="baby4.jpg" alt="Baby Shower 5" class="zoomable" data-category="baby-shower" data-index="4"></div>
+                        <div class="gallery-item"><img src="baby5.jpg" alt="Baby Shower 6" class="zoomable" data-category="baby-shower" data-index="5"></div>
+                        <div class="gallery-item hidden"><img src="baby6.jpg" alt="Baby Shower 7" class="zoomable" data-category="baby-shower" data-index="6"></div>
+                        <div class="gallery-item hidden"><img src="baby7.jpg" alt="Baby Shower 8" class="zoomable" data-category="baby-shower" data-index="7"></div>
+                        <div class="gallery-item hidden"><img src="baby8.jpg" alt="Baby Shower 9" class="zoomable" data-category="baby-shower" data-index="8"></div>
+                        <div class="gallery-item hidden"><img src="baby9.jpg" alt="Baby Shower 10" class="zoomable" data-category="baby-shower" data-index="9"></div>
+                        <div class="gallery-item hidden"><img src="baby10.jpg" alt="Baby Shower 11" class="zoomable" data-category="baby-shower" data-index="10"></div>
+                        <div class="show-more-container">
+                            <div class="show-more-item" data-category="baby-shower">
+                                <span class="show-more-text">Voir plus <span class="show-more-count">(5 images)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrosage -->
+                <div class="gallery-category">
+                    <h3>--Arrosage--</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item"><img src="arro0.jpg" alt="Arrosage 1" class="zoomable" data-category="arrosage" data-index="0"></div>
+                        <div class="gallery-item"><img src="arro1.jpg" alt="Arrosage 2" class="zoomable" data-category="arrosage" data-index="1"></div>
+                        <div class="gallery-item"><img src="arro2.jpg" alt="Arrosage 3" class="zoomable" data-category="arrosage" data-index="2"></div>
+                        <div class="gallery-item"><img src="arro3.jpg" alt="Arrosage 4" class="zoomable" data-category="arrosage" data-index="3"></div>
+                        <div class="gallery-item"><img src="arro4.jpg" alt="Arrosage 5" class="zoomable" data-category="arrosage" data-index="4"></div>
+                        <div class="gallery-item"><img src="arro5.jpg" alt="Arrosage 6" class="zoomable" data-category="arrosage" data-index="5"></div>
+                        <div class="gallery-item hidden"><img src="arro6.jpg" alt="Arrosage 7" class="zoomable" data-category="arrosage" data-index="6"></div>
+                        <div class="gallery-item hidden"><img src="arro7.jpg" alt="Arrosage 8" class="zoomable" data-category="arrosage" data-index="7"></div>
+                        <div class="gallery-item hidden"><img src="arro8.jpg" alt="Arrosage 9" class="zoomable" data-category="arrosage" data-index="8"></div>
+                        <div class="gallery-item hidden"><img src="arro9.jpg" alt="Arrosage 10" class="zoomable" data-category="arrosage" data-index="9"></div>
+                        <div class="gallery-item hidden"><img src="arro10.jpg" alt="Arrosage 11" class="zoomable" data-category="arrosage" data-index="10"></div>
+                        <div class="show-more-container">
+                            <div class="show-more-item" data-category="arrosage">
+                                <span class="show-more-text">Voir plus <span class="show-more-count">(5 images)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="page-section contact-section">
+            <h2>Contactez-Nous</h2>
+            <p class="contact-intro">Vous souhaitez transformer votre événement en moment magique ? N'hésitez pas à nous contacter pour discuter de votre projet.</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Adresse</h3>
+                    <p>Karpala<br>Ouagadougou, Burkina Faso</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>WhatsApp</h3>
+                    <p>+226 67 78 07 04</p>
+                    <p>+226 63 61 25 26</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>dembeleadjita@gmail.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🕑</div>
+                    <h3>Horaires</h3>
+                    <p>Lundi-Vendredi: 8h-18h<br>Samedi: 9h-15h<br>Dimanche: Fermé</p>
+                </div>
+            </div>
+            
+            <h2 class="social-title">Nos réseaux</h2>
+            <div class="social-links">
+                <a href="https://api.whatsapp.com/send?phone=%2B22663612526&context=AfcKJgQf_LSs-hVY_2cAKLR9DSLHVM8GHBrPsAPcg08Hxgy4YDYNuVo_IiNenwArT_hurWJHNCkqbBQEyJCf6RGgf2tA6B0fj4jKshD73T8UKKBvudAVLDAqagQk3bcpwhk33xOsnM7JF5nqupeEWbAAmw&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawM9cMhleHRuA2FlbQIxMABicmlkETFCNVlGV0JwdDg4UlgzeDQ2AR4DoXjfQQ-Sip05sMPi3UUEYykocNr0oF_UfiC-gDb1YLs3ArOK_OsxFtwpwQ_aem_h8QKNAiC70vXitHOarN0Xg" target="_blank" class="social-link whatsapp">
+                    <span>📱</span> WhatsApp
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100067056278116" target="_blank" class="social-link facebook">
+                    <span>🇫</span> Facebook
+                </a>
+                <a href="https://www.tiktok.com/@dkahouseevents?is_from_webapp=1&sender_device=pc" target="_blank" class="social-link tiktok">
+                    <span>🎵</span> TikTok
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Design by young dev ft - Tous droits réservés</p>
+    </footer>
+
+    <!-- Modal Image Zoom -->
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <span class="nav-modal prev-modal">&#10094;</span>
+        <span class="nav-modal next-modal">&#10095;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <!-- Modal Réservation -->
+    <div id="reservation-modal" class="modal">
+        <div class="reservation-content">
+            <span class="close-reservation">&times;</span>
+            <h2>Formulaire de Réservation</h2>
+            <form id="reservation-form">
+                <div class="form-group">
+                    <label for="nom-prenom">Nom et Prénom</label>
+                    <input type="text" id="nom-prenom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date-deco">Date décoration</label>
+                    <input type="date" id="date-deco" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="heure">Heure de cérémonie</label>
+                    <select id="heure" required>
+                        <option value="">Sélectionnez une heure</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nature">Nature de cérémonie</label>
+                    <input type="text" id="nature" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Thèmes couleurs (sélectionnez 3 maximum)</label>
+                    <div class="color-picker">
+                        <div class="color-option" data-color="Rouge" style="background-color: #e74c3c;"></div>
+                        <div class="color-option" data-color="Rose" style="background-color: #ff69b4;"></div>
+                        <div class="color-option" data-color="Bleu" style="background-color: #3498db;"></div>
+                        <div class="color-option" data-color="Vert" style="background-color: #2ecc71;"></div>
+                        <div class="color-option" data-color="Jaune" style="background-color: #f1c40f;"></div>
+                        <div class="color-option" data-color="Orange" style="background-color: #e67e22;"></div>
+                        <div class="color-option" data-color="Violet" style="background-color: #9b59b6;"></div>
+                        <div class="color-option" data-color="Noir" style="background-color: #2c3e50;"></div>
+                        <div class="color-option" data-color="Blanc" style="background-color: #ecf0f1; border: 1px solid #bdc3c7;"></div>
+                        <div class="color-option" data-color="Or" style="background-color: #f39c12;"></div>
+                        <div class="color-option" data-color="Argent" style="background-color: #bdc3c7;"></div>
+                        <div class="color-option" data-color="Marron" style="background-color: #795548;"></div>
+                    </div>
+                    <div id="selected-colors"></div>
+                </div>
+
+                <h3>Lieu de cérémonie</h3>
+
+                <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <select id="ville" required>
+                        <option value="">Sélectionnez une ville</option>
+                        <option value="Ouaga">Ouaga</option>
+                        <option value="Bobo">Bobo</option>
+                        <option value="Koudougou">Koudougou</option>
+                        <option value="Ouahigouya">Ouahigouya</option>
+                        <option value="Banfora">Banfora</option>
+                        <option value="saisir">Saisir</option>
+                    </select>
+                    <input type="text" id="ville-custom" class="custom-input" placeholder="Saisissez la ville" style="display:none;">
+                </div>
+
+                <div class="form-group">
+                    <label for="quartier">Quartier</label>
+                    <select id="quartier" required disabled>
+                        <option value="">Sélectionnez d'abord une ville</option>
+                    </select>
+                    <input type="text" id="quartier-custom" class="custom-input" placeholder="Saisissez le quartier" style="display:none;">
+                </div>
+
+                <div class="form-group">
+                    <label for="modele">Modèle/Type de déco</label>
+                    <input type="text" id="modele" required>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Envoyer sur WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Variables globales
+        let selectedColors = [];
+        let currentCategory = '';
+        let currentIndex = 0;
+        let categoryImages = [];
+        
+        const quartiersByVille = {
+            'Ouaga': ['Tampouy', 'Pissy', 'Zone1', 'Nioko', 'Gounghin', 'Karpala', 'Ouaga2000', '1200 logement', 'Saisir'],
+            'Bobo': ['Koko', 'Colma', 'Accart ville', 'Yeguere', 'Nasso', 'Belle ville', 'Lafiabougou', 'Saisir'],
+            'Koudougou': ['Saisir'],
+            'Ouahigouya': ['Saisir'],
+            'Banfora': ['Saisir']
+        };
+
+        // Navigation entre sections
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').substring(1);
+                
+                // Cacher toutes les sections
+                document.querySelectorAll('.page-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Afficher la section ciblée
+                document.getElementById(target).classList.add('active');
+                
+                // Mettre à jour les liens actifs
+                document.querySelectorAll('.nav-link').forEach(l => {
+                    l.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Fermer le menu mobile
+                if (window.innerWidth <= 768) {
+                    document.querySelector('nav').classList.remove('active');
+                }
+                
+                // Scroll vers le haut
+                window.scrollTo(0, 0);
+            });
+        });
+
+        // Menu mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+
+        // Générer les heures pour le formulaire
+        const heureSelect = document.getElementById('heure');
+        for (let h = 7; h <= 24; h++) {
+            for (let m = 0; m < 60; m += 30) {
+                if (h === 24 && m > 0) break;
+                const hour = h === 24 ? 0 : h;
+                const time = `${hour}h${m === 0 ? '00' : m}`;
+                const option = document.createElement('option');
+                option.value = time;
+                option.textContent = time;
+                heureSelect.appendChild(option);
+            }
+        }
+
+        // Gestion des couleurs
+        document.querySelectorAll('.color-option').forEach(color => {
+            color.addEventListener('click', function() {
+                const colorName = this.getAttribute('data-color');
+                
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                    selectedColors = selectedColors.filter(c => c !== colorName);
+                } else if (selectedColors.length < 3) {
+                    this.classList.add('selected');
+                    selectedColors.push(colorName);
+                } else {
+                    alert('Vous pouvez sélectionner maximum 3 couleurs');
+                }
+                
+                document.getElementById('selected-colors').textContent = 
+                    selectedColors.length > 0 ? `Couleurs sélectionnées: ${selectedColors.join(', ')}` : '';
+            });
+        });
+
+        // Gestion ville/quartier
+        document.getElementById('ville').addEventListener('change', function() {
+            const ville = this.value;
+            const quartierSelect = document.getElementById('quartier');
+            const villeCustom = document.getElementById('ville-custom');
+            
+            if (ville === 'saisir') {
+                this.style.display = 'none';
+                villeCustom.style.display = 'block';
+                villeCustom.required = true;
+                quartierSelect.disabled = true;
+                document.getElementById('quartier-custom').style.display = 'block';
+                document.getElementById('quartier-custom').required = true;
+                quartierSelect.style.display = 'none';
+            } else if (ville) {
+                quartierSelect.disabled = false;
+                quartierSelect.innerHTML = '<option value="">Sélectionnez un quartier</option>';
+                quartiersByVille[ville].forEach(q => {
+                    const option = document.createElement('option');
+                    option.value = q;
+                    option.textContent = q;
+                    quartierSelect.appendChild(option);
+                });
+            } else {
+                quartierSelect.disabled = true;
+                quartierSelect.innerHTML = '<option value="">Sélectionnez d\'abord une ville</option>';
+            }
+        });
+
+        document.getElementById('quartier').addEventListener('change', function() {
+            const quartierCustom = document.getElementById('quartier-custom');
+            if (this.value === 'Saisir') {
+                this.style.display = 'none';
+                quartierCustom.style.display = 'block';
+                quartierCustom.required = true;
+            }
+        });
+
+        // Modal réservation
+        function openReservationModal() {
+            document.getElementById('reservation-modal').style.display = 'block';
+        }
+
+        document.querySelector('.close-reservation').addEventListener('click', function() {
+            document.getElementById('reservation-modal').style.display = 'none';
+        });
+
+        // Soumission formulaire
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nom = document.getElementById('nom-prenom').value;
+            const date = document.getElementById('date-deco').value;
+            const heure = document.getElementById('heure').value;
+            const nature = document.getElementById('nature').value;
+            const ville = document.getElementById('ville').value === 'saisir' ? 
+                         document.getElementById('ville-custom').value : 
+                         document.getElementById('ville').value;
+            const quartier = document.getElementById('quartier').value === 'Saisir' ? 
+                            document.getElementById('quartier-custom').value : 
+                            document.getElementById('quartier').value;
+            const modele = document.getElementById('modele').value;
+            
+            const dateFormatted = new Date(date).toLocaleDateString('fr-FR');
+            const couleurs = selectedColors.join(', ');
+            
+            const message = `Bonjour je m'appelle *${nom}*
+----*reservation*----
+*Date*: ${dateFormatted}
+*Designation*: ${nature}
+*Heure*: ${heure}
+*Couleur*: ${couleurs}
+*Ville*: ${ville}
+*Quartier*: ${quartier}
+*Modèle/type deco*: ${modele}`;
+            
+            const whatsappUrl = `https://wa.me/22675516722?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            document.getElementById('reservation-modal').style.display = 'none';
+            this.reset();
+            selectedColors = [];
+            document.querySelectorAll('.color-option').forEach(c => c.classList.remove('selected'));
+            document.getElementById('selected-colors').textContent = '';
+        });
+
+        // Fonctionnalité "Voir plus"
+        document.querySelectorAll('.show-more-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                const galleryItems = this.closest('.gallery-items').querySelectorAll('.gallery-item.hidden');
+                
+                galleryItems.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                
+                this.closest('.show-more-container').style.display = 'none';
+            });
+        });
+
+        // Zoom images avec navigation
+        const zoomableImages = document.querySelectorAll('.zoomable');
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeModal = document.querySelector('.close-modal');
+        const prevModal = document.querySelector('.prev-modal');
+        const nextModal = document.querySelector('.next-modal');
+
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                const index = parseInt(this.getAttribute('data-index'));
+                
+                if (category && index !== null) {
+                    currentCategory = category;
+                    currentIndex = index;
+                    categoryImages = Array.from(document.querySelectorAll(`.zoomable[data-category="${category}"]`));
+                    updateNavButtons();
+                }
+                
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        });
+
+        prevModal.addEventListener('click', function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                modalImg.src = categoryImages[currentIndex].src;
+                updateNavButtons();
+            }
+        });
+
+        nextModal.addEventListener('click', function() {
+            if (currentIndex < categoryImages.length - 1) {
+                currentIndex++;
+                modalImg.src = categoryImages[currentIndex].src;
+                updateNavButtons();
+            }
+        });
+
+        function updateNavButtons() {
+            if (prevModal && nextModal) {
+                prevModal.style.display = currentIndex > 0 ? 'block' : 'none';
+                nextModal.style.display = currentIndex < categoryImages.length - 1 ? 'block' : 'none';
+            }
+        }
+
+        closeModal.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            if (event.target == document.getElementById('reservation-modal')) {
+                document.getElementById('reservation-modal').style.display = "none";
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (modal.style.display === "block") {
+                if (event.key === "ArrowLeft" && currentIndex > 0) {
+                    currentIndex--;
+                    modalImg.src = categoryImages[currentIndex].src;
+                    updateNavButtons();
+                } else if (event.key === "ArrowRight" && currentIndex < categoryImages.length - 1) {
+                    currentIndex++;
+                    modalImg.src = categoryImages[currentIndex].src;
+                    updateNavButtons();
+                } else if (event.key === "Escape") {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+                        
